@@ -1,1 +1,126 @@
-hello world
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mikearoni.exe</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<!-- For IE 11, Chrome, Firefox, Safari, Opera -->
+<link rel="icon" href="icon.png" type="image/png">
+<!-- For iOS devices -->
+<link rel="apple touch icon" href="/icon.png" sizes="180x180">
+<!--Loading Bar -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(function(){
+    $("#nav-placeholder").load("nav.html");
+  });
+</script>
+</head>
+
+<!-- CRT Screen Effect -->
+<div class="crt-overlay"></div>
+<div class="crt-scanlines"></div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('crtToggle');
+    const crtOverlay = document.querySelector('.crt-overlay');
+    const crtScanlines = document.querySelector('.crt-scanlines');
+    
+    // Check localStorage for saved preference
+    const crtEnabled = localStorage.getItem('crtEnabled') !== 'false';
+    
+    // Initialize
+    if (!crtEnabled) {
+      document.body.classList.add('crt-off');
+      toggle.setAttribute('aria-pressed', 'false');
+      toggle.querySelector('.crt-label').textContent = 'CRT FX: OFF';
+    }
+    
+    // Toggle function
+    toggle.addEventListener('click', () => {
+      const isPressed = toggle.getAttribute('aria-pressed') === 'true';
+      
+      if (isPressed) {
+        // Turn OFF
+        document.body.classList.add('crt-off');
+        toggle.setAttribute('aria-pressed', 'false');
+        toggle.querySelector('.crt-label').textContent = 'CRT FX: OFF';
+        localStorage.setItem('crtEnabled', 'false');
+      } else {
+        // Turn ON
+        document.body.classList.remove('crt-off');
+        toggle.setAttribute('aria-pressed', 'true');
+        toggle.querySelector('.crt-label').textContent = 'CRT FX: ON';
+        localStorage.setItem('crtEnabled', 'true');
+      }
+    });
+  });
+</script>
+
+
+<body>
+<!--
+<div class="loading-screen">
+  <div class="loading-text">SKINSTEALER.PHP ACTIVATING</div>
+  <div class="loading-bar"></div>
+</div>
+-->
+
+  <div class="container">
+  
+    <header>
+  <h1 class="neon-header">
+    <span>✨</span>
+    <span class="neon-letter">M</span>
+    <span class="neon-letter">I</span>
+    <span class="neon-letter">K</span>
+    <span class="neon-letter">E</span>
+    <span class="neon-letter">A</span>
+    <span class="neon-letter">R</span>
+    <span class="neon-letter">O</span>
+    <span class="neon-letter">N</span>
+    <span class="neon-letter">I</span>
+    <span>✨</span>
+  </h1>
+    </header>
+
+<div>
+
+  <nav>
+    <div class="scanning-glow"></div>
+    <ul>
+      <li><a href="https://www.twitch.tv/mikearoni" target="_blank">.TTV</a></li>
+      <li><a href="https://www.youtube.com/@TaintSmasher216/videos" target="_blank">.YT</a></li>
+      <li><a href="https://discord.gg/3nbmNxtn" target="_blank">.DC</a></li>
+      <li><a href="https://bsky.app/profile/raisedbyinternet.bsky.social" target="_blank">.BS</a></li>
+      <li><a href="https://steamcommunity.com/id/mikearoni/" target="_blank">.STM</a></li>
+      <li><a href="https://www.faceit.com/en/players/Mikearoni" target="_blank">.FCT</a></li>
+    </ul>
+  </nav>
+  <div class="crt-toggle-container">
+  <button id="crtToggle" class="crt-toggle" aria-pressed="true">
+    <span class="crt-icon">📺</span>
+    <span class="crt-label">CRT FX: ON</span>
+  </button>
+</div>
+</div>
+
+    <main>
+      <h2><chat>Welcome to the Future!</chat></h2>
+      <p><chat>All roads lead to me. Thank you for participating in the experiment.💾</chat></p>
+      <img src="/images/neonrider.png" class="hero-image">
+      <img src="/images/bhop.gif" alt="B HOP GOD" class="hero-image">
+    </main>
+    
+    <footer>
+    <img src="/images/netscape.gif"><img src="/images/nvidia.gif"><img src="/images/geo-citi.gif"><img src="/images/aimlink.gif"><img src="/images/cool-shades.gif">
+      <p>© 1986 <a href="https://steamcommunity.com/groups/FlipperGang" target="_blank">Flipper Gang</a>. Hosted by <a href="https://neocities.org" target="_blank">NeoCities Unlimited™</a>.</p>
+      <script type="text/javascript" src="https://counter.websiteout.com/js/6/0/100/0"></script>
+    </footer>
+  </div>
+</body>
+
+</html>
